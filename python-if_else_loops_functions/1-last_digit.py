@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import random
-from sys import last_traceback
 number = random.randint(-10000, 10000)
 last = number % 10
 if number < 0:
