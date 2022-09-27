@@ -8,7 +8,13 @@ def roman_to_int(roman_string):
         for i in roman_string:
             if i == 'V' and roman_string[:-1] == 'I':
                 sum -= 2
+            elif i == 'V' and roman_string[3:-1] == 'I':
+                sum -= 2
+            elif i == 'X' and roman_string[1:-2] == 'C':
+                sum -= 11
+            elif i == 'X' and roman_string[3:-2] == 'X':
+                sum -= 1/2
             sum += roman_d.get(i)
-        return sum
+        return int(sum)
     else:
         return 0
