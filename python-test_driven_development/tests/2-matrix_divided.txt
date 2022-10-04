@@ -22,7 +22,7 @@ Test for divisor:
     >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
     Traceback (most recent call last):
     ...
-    TypeError: division by zero
+    ZeroDivisionError: division by zero
 
 Test for matrix:
 

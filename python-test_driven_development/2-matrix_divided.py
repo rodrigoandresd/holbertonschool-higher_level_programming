@@ -25,5 +25,5 @@ def matrix_divided(matrix, div):
             if not element or not isinstance(element, (float, int)):
                 raise TypeError(le)
 
-    return list(map(lambda row: list(map(lambda num: round(num / div, 2),
-                 row)), matrix))
+    return list(map(lambda row: list(map(lambda num:
+                                         round(num / div, 2), row)), matrix))
