@@ -1,0 +1,52 @@
+
+This is the test to test my function: def add_integer(a, b=98)
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test for positive ints:
+
+    >>> add_integer(2, 3)
+    5
+
+Test for negative ints:
+
+    >>> add_integer(-1, 4)
+    3
+
+Test for positive floats - Need to be treated has int:
+
+    >>> add_integer(2.3, 5.6)
+    7
+
+Test for negative floats - Need to be treated has int:
+
+    >>> add_integer(-3.3, 5.2)
+    2
+
+Test for not b:
+
+    >>> add_integer(5)
+    103
+
+test for a error:
+test for string:
+
+    >>> add_integer("uno", 6)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+test for not parameter:
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+test for b error:
+test for string:
+
+    >>> add_integer(6, "uno")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
