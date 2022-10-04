@@ -22,7 +22,7 @@ Test for divisor:
     >>> matrix_divided([[3, 9], [12, 15]], 0)
     Traceback (most recent call last):
     ...
-    TypeError: div must be a number
+    ZeroDivisionError: division by zero
 
 Test for matrix:
 

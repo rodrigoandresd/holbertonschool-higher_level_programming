@@ -23,7 +23,6 @@ def matrix_divided(matrix, div):
         if len(row) != len(matrix[0]):
             raise TypeError("Each row of the matrix must have the same size")
 
-
         for element in row:
             if not element or not isinstance(element, (float, int)):
                 raise TypeError(le)
