@@ -5,7 +5,7 @@
 
 def text_indentation(text):
     """
-    function that prints a text with 2 new lines after each of 
+    function that prints a text with 2 new lines after each of
     these characters: ., ? and :
     """
     if type(text) is not str:
