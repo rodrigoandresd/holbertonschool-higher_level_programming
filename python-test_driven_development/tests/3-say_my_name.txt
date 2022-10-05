@@ -34,7 +34,7 @@ Test for not string
     My name is Walter 
 
     >>> say_my_name("", "White")
-    y name is  White
+    My name is  White
 
     >>> say_my_name("", "")
     My name is  
