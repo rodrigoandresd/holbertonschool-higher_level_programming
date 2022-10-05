@@ -4,7 +4,9 @@
 module that contain the function say_my_name
 """
 
+
 def say_my_name(first_name, last_name=""):
+    """funtion that say a name"""
     if type(first_name) not in [str]:
                 raise TypeError("first_name must be a string")
     if type(last_name) not in [str]:
