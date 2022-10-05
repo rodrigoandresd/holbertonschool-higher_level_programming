@@ -77,3 +77,6 @@ Test for matrix:
     Traceback (most recent call last):
     ...
     TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
