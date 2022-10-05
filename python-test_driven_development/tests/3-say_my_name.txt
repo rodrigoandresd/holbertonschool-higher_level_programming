@@ -9,6 +9,10 @@ Test for not string
     ...
     TypeError: first_name must be a string
 
+    >>> say_my_name("Walter", 12)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
     >>> say_my_name("White")
     My name is White 
 
