@@ -30,8 +30,8 @@ Test for not string
     ...
     TypeError: first_name must be a string
 
-    >>> say_my_name("Walter", "")
-    My name is Walter 
+    >>> say_my_name("Bob", "")
+    My name is Bob 
 
     >>> say_my_name("", "White")
     My name is  White
@@ -43,4 +43,3 @@ Test for not string
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
-    
