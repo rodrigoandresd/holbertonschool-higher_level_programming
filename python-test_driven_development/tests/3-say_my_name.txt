@@ -1,0 +1,32 @@
+This is the test to test my function: say_my_name(first_name, last_name=""):
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Test for not string
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("White")
+    My name is White 
+
+    >>> say_my_name("")
+    My name is  
+
+    >>> say_my_name(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name([])
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
