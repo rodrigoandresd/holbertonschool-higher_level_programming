@@ -13,3 +13,12 @@ This is the test to test my function: def print_square(size):
     ####
     ####
 
+    >>> print_square("one")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
