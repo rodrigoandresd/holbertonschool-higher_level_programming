@@ -30,11 +30,11 @@ Test for not string
     ...
     TypeError: first_name must be a string
 
-    >>> say_my_name("Bob", "")
-    My name is Bob 
+    >>> say_my_name("Walter", "")
+    My name is Walter 
 
     >>> say_my_name("", "White")
-    My name is  White
+    y name is  White
 
     >>> say_my_name("", "")
     My name is  
