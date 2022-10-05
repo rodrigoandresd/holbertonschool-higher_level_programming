@@ -33,5 +33,14 @@ Test for not string
     >>> say_my_name("Walter", "")
     My name is Walter 
 
+    >>> say_my_name("", "White")
+    My name is  White
+
     >>> say_my_name("", "")
     My name is  
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+    
