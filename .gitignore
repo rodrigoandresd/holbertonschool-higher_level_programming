@@ -74,3 +74,6 @@ python-inheritance/6-main.py
 python-inheritance/5-main.py
 python-inheritance/7-main.py
 python-inheritance/__pycache__/7-base_geometry.cpython-38.pyc
+python-inheritance/8-main.py
+python-inheritance/__pycache__/7-base_geometry.cpython-310.pyc
+python-inheritance/__pycache__/8-rectangle.cpython-310.pyc
