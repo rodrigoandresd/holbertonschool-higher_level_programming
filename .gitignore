@@ -94,3 +94,8 @@ python-input_output/4-main.py
 python-input_output/5-main.py
 python-input_output/6-main.py
 python_practice/champ2.py
+python-input_output/__pycache__/5-save_to_json_file.cpython-38.pyc
+python-input_output/__pycache__/5-save_to_json_file.cpython-310.pyc
+python-input_output/__pycache__/6-load_from_json_file.cpython-310.pyc
+python-input_output/__pycache__/6-load_from_json_file.cpython-38.pyc
+add_item.json
