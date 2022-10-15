@@ -23,7 +23,8 @@ def pascal_triangle(n):
 
         for nxt_val in range(0, len(list_pt[prev_val]) - 1):
 
-            line.extend([list_pt[prev_val][nxt_val] + list_pt[prev_val][nxt_val + 1]])
+            line.extend([list_pt[prev_val][nxt_val] + list_pt[prev_val]
+                [nxt_val + 1]])
 
         line += [1]
         list_pt.append(line)
