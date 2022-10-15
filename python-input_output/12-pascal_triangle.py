@@ -6,27 +6,26 @@ def pascal_triangle(n):
     """Function that returns a list of lists of integers representing
     the Pascal's triangle of n"""
 
-    list_pt = []
+    lt = []
 
     if n <= 0:
-        return list_pt
+        return lt
 
     if n == 1:
-        list_pt = [[1]]
-        return list_pt
+        lt = [[1]]
+        return lt
 
-    list_pt = [[1], [1, 1]]
+    lt = [[1], [1, 1]]
 
     for prev_val in range(1, n - 1):
 
         line = [1]
 
-        for nxt_val in range(0, len(list_pt[prev_val]) - 1):
+        for nxt_val in range(0, len(lt[prev_val]) - 1):
 
-            line.extend([list_pt[prev_val][nxt_val] + list_pt[prev_val]
-                [nxt_val + 1]])
+            line.extend([lt[prev_val][nxt_val] + lt[prev_val][nxt_val + 1]])
 
         line += [1]
-        list_pt.append(line)
+        lt.append(line)
 
-    return list_pt
+    return lt
