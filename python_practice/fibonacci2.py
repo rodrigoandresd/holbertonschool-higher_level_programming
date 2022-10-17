@@ -5,16 +5,14 @@
 fibonacci series
 the sum of two elements defines the next
 """
-def fib(n):
+def fib2(n):
+    listfb = []
     a, b = 0, 1
 
     while a < n:
-        print(a, end=", ")
+        listfb.append(a)
         a, b = b, a + b
-    print()
+    return listfb
 
-fib(20)
-f = fib
-f(20)
-print(id(fib))
-print(id(f))
+f = fib2(20)
+print(f)
