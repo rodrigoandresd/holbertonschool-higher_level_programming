@@ -58,3 +58,17 @@ class Base:
         dummy_instance.update(**dictionary)
 
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        function that returns a list of instances (e.g. [r1, r2, r3])
+        function that deserializes in JSON
+        """
+        filename = f"{cls.__name__}.json"
+        try:
+            with open(filename, 'r') as f:
+                list_obj_dict = cls.from_json_string(f.read())
+                return list(map(lambda obj: cls.create(**obj), list_obj_dict))
+        except:
+            return []
