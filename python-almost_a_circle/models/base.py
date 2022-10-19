@@ -5,6 +5,7 @@ First clase Base
 """
 
 import json
+from multiprocessing import dummy
 
 
 class Base:
@@ -50,3 +51,10 @@ class Base:
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        dummy_instance = cls(**dictionary)
+        dummy_instance.update(**dictionary)
+
+        return dummy_instance
