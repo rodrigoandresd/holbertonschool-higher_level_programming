@@ -81,7 +81,7 @@ class Rectangle(Base):
                                                        self.x, self.y,
                                                        self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         public method that assigns an argument to each attribute
         """
@@ -89,3 +89,6 @@ class Rectangle(Base):
             list_a = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
                 setattr(self, list_a[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
