@@ -4,8 +4,6 @@
 First clase Base
 """
 
-
-from multiprocessing.sharedctypes import Value
 import json
 
 
