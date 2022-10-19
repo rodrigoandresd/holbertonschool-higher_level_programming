@@ -71,8 +71,10 @@ class Rectangle(Base):
         """
         public method that prints in stdout the Rectangle with the character #
         """
+        for i in range(self.y):
+            print()
         for i in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
