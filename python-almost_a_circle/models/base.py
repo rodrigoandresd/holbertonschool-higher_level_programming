@@ -44,3 +44,9 @@ class Base:
         with open(filename, "w") as f:
             lst_j = list(map(lambda obj: obj.to_dictionary(), list_objs))
             f.write(cls.to_json_string(lst_j))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or json_string == []:
+            return "[]"
+        return json_string
