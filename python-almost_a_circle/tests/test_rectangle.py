@@ -65,3 +65,28 @@ class Test_rectangle(unittest.TestCase):
     def test_inheritance(self):
         r1 = Rectangle(7, 10)
         self.assertEqual(True, isinstance(r1, Base))
+
+    def test_rectangle_to_dictionary_exists(self):
+        rect_dict = Rectangle(1, 2, 3, 4, 5).to_dictionary()
+        result = {
+            'width': 1,
+            'height': 2,
+            'x': 3,
+            'y': 4,
+            'id': 5
+        }
+        self.assertEqual(rect_dict, result)
+
+    def test_rectangle_create_exists_1(self):
+        with self.assertRaises(TypeError):
+            Rectangle.create(**{'id': 89})
+
+    def test_rectangle_create_exists_2(self):
+        with self.assertRaises(TypeError):
+            Rectangle.create(**{'id': 89, 'width': 1})
+
+    def test_rectangle_create_exists_3(self):
+        rect = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
