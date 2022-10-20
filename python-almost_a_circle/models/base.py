@@ -5,7 +5,6 @@ First clase Base
 """
 
 import json
-from multiprocessing import dummy
 
 
 class Base:
