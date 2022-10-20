@@ -4,6 +4,9 @@
 
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
+import io
+import sys
 
 
 class Test_rectangle(unittest.TestCase):
@@ -13,6 +16,11 @@ class Test_rectangle(unittest.TestCase):
         rect = Rectangle(1, 2)
         self.assertEqual(rect.width, 1)
         self.assertEqual(rect.height, 2)
+
+    def test_rectangle_representation(self):
+        rect_r = str(Rectangle(1, 2, 3, 4, 5))
+        result = '[Rectangle] (5) 3/4 - 1/2'
+        self.assertEqual(rect_r, result)
     
     def test_type(self):
         self.assertRaises(TypeError, Rectangle, 10, "2")
@@ -30,18 +38,30 @@ class Test_rectangle(unittest.TestCase):
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.area(), 20)
 
-    def test_class_method_presence(self):
-        """Test that the Rectangle methods are all present"""
-        l1 = dir(Rectangle)
-        self.assertIn('__init__', l1)
-        self.assertIn('width', l1)
-        self.assertIn('height', l1)
-        self.assertIn('x', l1)
-        self.assertIn('y', l1)
-        self.assertIn('area', l1)
-        self.assertIn('display', l1)
-        self.assertIn('__str__', l1)
-        self.assertIn('update', l1)
-        self.assertIn('to_dictionary', l1)
-        self.assertIn('from_json_string', l1)
-        self.assertIn('load_from_file', l1)
+    def test_display(self):
+        output = io.StringIO()
+        sys.stdout = output
+        Rectangle(2, 2).display()
+        self.assertEqual(output.getvalue(), "##\n##\n")
+        output = io.StringIO()
+        sys.stdout = output
+        Rectangle(2, 2, 1, 1).display()
+        self.assertEqual(output.getvalue(), "\n ##\n ##\n")
+    
+    def test_update(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+        self.assertEqual(r1.y, 5)
+        self.assertEqual(r1.id, 89)
+        r1.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(r1.width, 4)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 1)
+        self.assertEqual(r1.y, 3)
+
+    def test_inheritance(self):
+        r1 = Rectangle(7, 10)
+        self.assertEqual(True, isinstance(r1, Base))
