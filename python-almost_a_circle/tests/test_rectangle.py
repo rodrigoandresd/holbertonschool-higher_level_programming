@@ -18,12 +18,9 @@ class Test_rectangle(unittest.TestCase):
         self.assertRaises(TypeError, Rectangle, 10, "2")
         self.assertRaises(TypeError, Rectangle, "10", 2)
         self.assertRaises(TypeError, Rectangle, 10, 8, "3", 5)
-        self.assertRaises(TypeError, Rectangle, -1, 2)
-        self.assertRaises(TypeError, Rectangle, 1, -2)
-        self.assertRaises(TypeError, Rectangle, 0, 2)
-        self.assertRaises(TypeError, Rectangle, 1, 0)
-        self.assertRaises(TypeError, Rectangle, 1, 2, -3)
 
-
-if __name__ == '__main__':
-    unittest.main()
+    def tes_value(self):
+        self.assertRaises(ValueError, Rectangle, 10, -8)
+        self.assertRaises(ValueError, Rectangle, -10, 8)
+        self.assertRaises(ValueError, Rectangle, 0, 8)
+        self.assertRaises(ValueError, Rectangle, 7, 0)
