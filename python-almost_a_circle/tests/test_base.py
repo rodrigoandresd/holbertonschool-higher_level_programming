@@ -29,5 +29,14 @@ class TestBase(unittest.TestCase):
 
     def test_to_json_str_id_exist(self):
         self.assertEqual(Base.to_json_string([ { 'id': 12 }]), '[{"id": 12}]')
+
+    def test_from_json_string_none(self):
+        self.assertEqual(Base.from_json_string(None), [])
+
+    def test_from_json_string_empty(self):
+        self.assertEqual(Base.from_json_string("[]"), [])
+
+    def test_from_json_string_exists(self):
+        self.assertEqual(Base.from_json_string('[{ "id": 89 }]'), [{'id': 89}])
 if __name__ == '__main__':
     unittest.main()
