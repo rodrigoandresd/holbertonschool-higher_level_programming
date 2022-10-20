@@ -27,3 +27,10 @@ class Test_square(unittest.TestCase):
         self.assertRaises(ValueError, Square, -10)
         self.assertRaises(ValueError, Square, 10, -3, 0)
         self.assertRaises(ValueError, Square, 10, 3, -10)
+
+    def test_Square_creation(self):
+        square = Square(1, 2, 3, 4)
+        self.assertEqual(square.size, 1)
+        self.assertEqual(square.x, 2)
+        self.assertEqual(square.y, 3)
+        self.assertEqual(square.id, 4)

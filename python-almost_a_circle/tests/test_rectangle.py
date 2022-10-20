@@ -7,6 +7,7 @@ from models.rectangle import Rectangle
 from models.base import Base
 import io
 import sys
+import os
 
 
 class Test_rectangle(unittest.TestCase):
@@ -90,3 +91,18 @@ class Test_rectangle(unittest.TestCase):
         self.assertEqual(rect.id, 89)
         self.assertEqual(rect.width, 1)
         self.assertEqual(rect.height, 2)
+
+    def test_rectangle_save_to_file_exists_empty(self):
+        Rectangle.save_to_file([])
+
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(f.read(), '[]')
+        os.remove('Rectangle.json')
+
+    def test_rectangle_save_to_file_exists(self):
+        Rectangle.save_to_file([Rectangle(1, 2)])
+
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(
+                f.read(), '[{"id": 14, "width": 1, "height": 2, "x": 0, "y": 0}]')
+        os.remove('Rectangle.json')
