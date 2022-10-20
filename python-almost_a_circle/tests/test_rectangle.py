@@ -13,3 +13,17 @@ class Test_rectangle(unittest.TestCase):
         rect = Rectangle(1, 2)
         self.assertEqual(rect.width, 1)
         self.assertEqual(rect.height, 2)
+    
+    def test_type(self):
+        self.assertRaises(TypeError, Rectangle, 10, "2")
+        self.assertRaises(TypeError, Rectangle, "10", 2)
+        self.assertRaises(TypeError, Rectangle, 10, 8, "3", 5)
+        self.assertRaises(TypeError, Rectangle, -1, 2)
+        self.assertRaises(TypeError, Rectangle, 1, -2)
+        self.assertRaises(TypeError, Rectangle, 0, 2)
+        self.assertRaises(TypeError, Rectangle, 1, 0)
+        self.assertRaises(TypeError, Rectangle, 1, 2, -3)
+
+
+if __name__ == '__main__':
+    unittest.main()
