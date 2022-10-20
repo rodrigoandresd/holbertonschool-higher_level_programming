@@ -4,6 +4,9 @@
 
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+
 
 class TestBase(unittest.TestCase):
     """class test"""
@@ -16,5 +19,13 @@ class TestBase(unittest.TestCase):
     def test_auto_id_saved(self):
         b2 = Base(89)
         self.assertEqual(b2.id, 89)
+    def test_to_json_str_none(self):
+        self.assertEqual(Base.to_json_string(None), '[]')
+    def test_to_json_str_empty(self):
+        self.assertEqual(Base.to_json_string([]), '[]')
+    def test_to_json_str_id(self):
+        self.assertEqual(Base.to_json_string([ { 'id': 12 }]), '[{"id": 12}]')
+    def test_to_json_str_id_exist(self):
+        self.assertEqual(Base.to_json_string([ { 'id': 12 }]), '[{"id": 12}]')
 if __name__ == '__main__':
     unittest.main()
