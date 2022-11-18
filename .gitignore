@@ -145,3 +145,4 @@ python_practice/repaso_remove_list.py
 SQL_introduction/temperatures.sql
 python-object_relational_mapping/0-select_states.sql
 python-object_relational_mapping/4-cities_by_state.sql
+python-object_relational_mapping/6-model_state.sql
