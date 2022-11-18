@@ -4,7 +4,7 @@ database hbtn_0e_6_usa"""
 
 import sys
 from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
@@ -13,7 +13,8 @@ if __name__ == "__main__":
     a3 = sys.argv[3]
     en = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(a1, a2, a3),
                        pool_pre_ping=True)
-    Base.metadata.create_all(en)
+    en.connect()
+    metadata = MetaData()
     session = Session(en)
     update = session.query(State).get(2)
     update.name = "New Mexico"
