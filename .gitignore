@@ -146,3 +146,7 @@ SQL_introduction/temperatures.sql
 python-object_relational_mapping/0-select_states.sql
 python-object_relational_mapping/4-cities_by_state.sql
 python-object_relational_mapping/6-model_state.sql
+python-object_relational_mapping/__pycache__/model_state.cpython-38.pyc
+python-object_relational_mapping/sys
+python-object_relational_mapping/7-model_state_fetch_all.sql
+python-object_relational_mapping/6-model_state.py
