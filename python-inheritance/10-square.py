@@ -10,10 +10,9 @@ class Square(Rectangle):
     """Square class"""
     def __init__(self, size):
         """__init__ constructor method"""
-        self.integer_validator("size", size)
+        super().integer_validator("size", size)
         self.__size = size
-        self._Rectangle__width = size
-        self._Rectangle__height = size
+        super().__init__(size, size)
 
     def area(self):
         """Area method"""
