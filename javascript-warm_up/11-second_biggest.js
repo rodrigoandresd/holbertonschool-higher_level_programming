@@ -3,14 +3,15 @@
 
 const argument = process.argv.slice(2);
 
-if (argument.length == 0 || argument.length == 1) {
-  console.log('0')
+if (argument.length === 0 || argument.length === 1) {
+  console.log('0');
 } else {
   const theBiggest = Math.max.apply(null, argument);
   newArray = [];
-  for (let i = 0; i < argument.length; i++)
+  for (let i = 0; i < argument.length; i++) {
     if (parseInt(argument[i]) != theBiggest) {
       newArray.push(argument[i]);
+    }
   }
   console.log(Math.max.apply(null, newArray));
 }
