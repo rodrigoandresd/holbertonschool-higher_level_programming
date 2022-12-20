@@ -9,7 +9,6 @@ request.get(url, (error, response, body) => {
   if (error) console.log(error);
   else {
     for (const result of JSON.parse(body).results) {
-      console.log(result)
       for (const character of result.characters) {
         if (character.includes('18')) {
           wedgeAppearances += 1;
